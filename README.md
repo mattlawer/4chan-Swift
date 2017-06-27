@@ -1,13 +1,7 @@
-## 4chan-Swift
+# 4chan-Swift
 Browse 4chan like a boss with a Swift API.
 
 Based on [4chan-API](https://github.com/4chan/4chan-API).
-
-## Installation
-	git clone https://github.com/mattlawer/4chan-Swift.git
-	cd 4chan-Swift
-	make
-	make install
 
 ## Swift API Usage
 Import the files from the API folder to your project and you're good to go !
@@ -31,7 +25,15 @@ session.chanTask(board, page: page) { (page, response, error) in
 }.resume()
 ```
 
-## Command-Line Tool Usage
+## Command-Line Tool
+
+### Installation
+	git clone https://github.com/mattlawer/4chan-Swift.git
+	cd 4chan-Swift
+	make
+	make install
+
+### Usage
 	Usage : 4chan -b <board> [-t <thread> | -p <page>]
 		-b <board> : 
 		-t <thread> : the thread n°
