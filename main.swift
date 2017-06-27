@@ -1,13 +1,13 @@
 import Foundation
 
 func usage() {
-    print("Usage : 4chan -b <board> [-t <thread> | -p <page>]\n");
-    print("\t-b <board> : \n");
-    print("\t-t <thread> : the thread n°\n");
-    print("\t-p <page> : the board page to load\n");
-    print("\t-h show this help screen\n\n");
+    print("Usage : 4chan -b <board> [-t <thread> | -p <page>]");
+    print("\t-b <board> : the board");
+    print("\t-t <thread> : the thread n°");
+    print("\t-p <page> : the board page to load");
+    print("\t-h show this help screen\n");
 
-    print("example:\n\t4chan -b r -t 123456789\n");
+    print("example:\n\t4chan -b r -t 123456789");
 }
 
 var cBoard: String?

@@ -22,5 +22,8 @@ module:
 	mkdir -p $(TARGET_DIR)
 	#$(SWIFTC) $(SRC) -emit-executable -sdk $(SDK_PATH) -module-name $(MODULE_NAME) -emit-module -emit-module-path $(TARGET_DIR)/$(MODULE_NAME).swiftmodule -o $(TARGET_DIR)/$(MODULE_NAME)
 
+install:
+	sudo cp $(PRODUCT) /usr/local/bin/
+
 clean:
 	rm -rf $(TARGET_DIR)
