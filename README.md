@@ -1,6 +1,8 @@
 ## 4chan-Swift
 Browse 4chan like a boss with a Swift API.
 
+Based on [4chan-API](https://github.com/4chan/4chan-API).
+
 ## Installation
 	git clone https://github.com/mattlawer/4chan-Swift.git
 	cd 4chan-Swift
