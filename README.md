@@ -9,7 +9,29 @@ Based on [4chan-API](https://github.com/4chan/4chan-API).
 	make
 	make install
 
-## Usage
+## Swift API Usage
+Import the files from the API folder to your project and you're good to go !
+
+Use it just like a regular URLSession dataTask...
+
+```swift
+let session = URLSession.shared // You also could use your own session
+
+let board = "wg" // The board you want
+let threadNum = 6942115 // The thread #
+session.chanTask(board, thread: threadNum) { (thread, response, error) in
+	// just use the ChanThread object named thread here 😋
+}.resume()
+```
+Or
+```swift
+let page = 3 // the page you want to load
+session.chanTask(board, page: page) { (page, response, error) in
+	// just use the ChanPage object named page here 😋
+}.resume()
+```
+
+## Command-Line Tool Usage
 	Usage : 4chan -b <board> [-t <thread> | -p <page>]
 		-b <board> : 
 		-t <thread> : the thread n°
