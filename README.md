@@ -43,5 +43,5 @@ session.chanTask(board, page: page) { (page, response, error) in
 	example:
 		4chan -b r -t 123456789
 
-![](http://i64.tinypic.com/2dgvlv7.png "4chan -b wg")
-![](http://i63.tinypic.com/2jche1v.png "4chan -b wg -t 6942115")
+![](http://i63.tinypic.com/26390z4.png "4chan -b wg")
+![](http://i64.tinypic.com/f9ig60.png "4chan -b wg -t 6941503")

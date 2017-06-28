@@ -64,7 +64,7 @@ struct ChanPost: CustomStringConvertible {
             string += " - "+flattenHTML(com)
         }
         if let file = self.filename, let ext = self.ext, let w = self.w, let h = self.h {
-            string += " - (\u{001B}[36m"+file+ext+" \u{001B}[32m\(w)x\(h)\u{001B}[m)"
+            string += " - (\u{001B}[36m"+file+ext+" \u{001B}[32m\(w)x\(h) \u{001B}[35m\(self.formatedFileSize)\u{001B}[m)"
         }
         return string
     }
@@ -133,5 +133,26 @@ struct ChanPost: CustomStringConvertible {
             return CFXMLCreateStringByUnescapingEntities(nil, flat as CFString, nil) as String
         }
         return flat
+    }
+
+    public var formatedFileSize: String {
+        struct Const {
+            static let ONE_KiB = Double(1024)
+            static let ONE_MiB = Double(ONE_KiB * ONE_KiB)
+            static let ONE_GiB = Double(ONE_KiB * ONE_MiB)
+        }
+        if let s = self.fsize {
+            let d = Double(s)
+            if d >= 0.0 && d < Const.ONE_KiB {
+                return "\(s)"
+            } else if d >= Const.ONE_KiB && d < Const.ONE_MiB {
+                return String(format: "%.1fKo", d / Const.ONE_KiB)
+            } else if d >= Const.ONE_MiB && d < Const.ONE_GiB {
+                return String(format: "%.2fMo", d / Const.ONE_MiB)
+            } else {
+                return String(format: "%.2fGo", d / Const.ONE_GiB)
+            }
+        }
+        return ""
     }
 }

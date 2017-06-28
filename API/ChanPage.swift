@@ -7,7 +7,9 @@ struct ChanPage: CustomStringConvertible {
         var string = ""
         if let threads = self.threads {
             for thread in threads {
-                string += thread.description+"\n"
+                if let post = thread.posts?.first {
+                    string += "\u{001B}[34m\(post.no)\u{001B}[m : \u{001B}[33m\(post.sub ?? post.com ?? "")\n\u{001B}[36m\(post.replies ?? 0)\u{001B}[m replies, \u{001B}[32m\(post.images ?? 0)\u{001B}[m images\n\n"
+                }
             }
         }
         return string
